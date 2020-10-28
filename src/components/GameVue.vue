@@ -2,7 +2,7 @@
   <div>
     <div
       class="game"
-      v-for="(line, indexLine) in board"
+      v-for="(line, indexLine) in game.Board.getTable()"
       :key="indexLine"
       :id="indexLine"
     >
@@ -27,18 +27,14 @@ export default {
   data() {
     return {
       game: new Game(),
-      board: [],
     };
   },
 
   methods: {
     moveToRight(){
       this.game.pacManMoveToRight()
+      this.$forceUpdate()
     }
-  },
-
-  mounted() {
-    this.board = this.game.Board.getTable() 
   },
 
   components: {},
