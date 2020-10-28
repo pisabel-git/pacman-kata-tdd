@@ -1,31 +1,41 @@
 <template>
   <div>
-    <div class="game" v-for="line in game.Board.getTable()" :key="line">
-      <div class="game-line" v-for="cell in line" :key="cell">
-        {{cell}}
+    <div
+      class="game"
+      v-for="(line, indexLine) in game.Board.getTable()"
+      :key="indexLine"
+      :id="indexLine"
+    >
+      <div
+        class="game-row"
+        v-for="(cell, indexRow) in line"
+        :key="indexRow"
+        :id="'cell_'+indexRow + '' +indexLine"
+      >
+        {{ cell }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Game from '@/Classes/Game'
+import Game from "@/Classes/Game";
 
 export default {
-  name: 'GameVue',
+  name: "GameVue",
   data() {
-      return{
-        game:  new Game()
-      }
+    return {
+      game: new Game(),
+    };
   },
   mounted() {},
-  components: {}
-}
+  components: {},
+};
 </script>
 
 <style>
-  .game{
-    display:flex;
-    justify-content:space-evenly;
-  }
+.game {
+  display: flex;
+  justify-content: space-evenly;
+}
 </style>

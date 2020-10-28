@@ -22,5 +22,7 @@ describe("Game", () => {
     it("should show us the board", ()=> {
         const wrapper = shallowMount(GameVue)
         expect(wrapper.find('.game').exists()).toBeTruthy()
+        const byId = wrapper.find('#cell_00')
+        expect(byId.text()).toBe('V')
     })
 })
