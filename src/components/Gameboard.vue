@@ -1,16 +1,15 @@
 <template>
-<div class="Gameboard">
-</div>
+<div class="Gameboard"></div>
 </template>
 
 <script>
-import Gameboard from '@/Classes/Gameboard'
+import Board from '@/Classes/Board'
 
 export default {
   name: 'Gameboard',
   data() {
       return{
-        gameboard:  new Gameboard()
+        board:  new Board()
       }
   },
   mounted() {},
