@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <Gameboard></Gameboard>
+    <GameVue></GameVue>
   </div>
 </template>
 
 <script>
-import Gameboard from '@/components/Gameboard.vue'
+import GameVue from '@/components/GameVue.vue'
 export default {
   name: 'App',
   components: {
-    Gameboard
+    GameVue
   }
 }
 </script>

@@ -1,6 +1,8 @@
 import Game from '@/Classes/Game'
 import PacMan from '@/Classes/PacMan'
 import Board from '@/Classes/Board'
+import GameVue from '@/components/GameVue'
+const { shallowMount } = require("@vue/test-utils")
 
 describe("Game", () => {
     let game;
@@ -15,5 +17,10 @@ describe("Game", () => {
     })
     it("should contain a board", ()=> {
         expect(game.Board).toBeInstanceOf(Board)
+    })
+
+    it("should show us the board", ()=> {
+        const wrapper = shallowMount(GameVue)
+        expect(wrapper.find('.game').exists()).toBeTruthy()
     })
 })
