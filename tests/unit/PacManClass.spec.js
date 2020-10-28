@@ -1,7 +1,6 @@
 const { default: PacMan } = require("../../src/Classes/PacMan")
 
 describe("PacMan", () => {
-    
     let pacman
     beforeEach(() => {
         pacman = new PacMan()
@@ -17,7 +16,6 @@ describe("PacMan", () => {
     })
 
     it("should move the pacman horizontally or vertically", () => {
-        let start_position = pacman.getPosition()
         pacman.moveRight()
         expect(pacman.getPosition()).toEqual([1, 0])
         pacman.moveLeft()
