@@ -25,4 +25,12 @@ describe("Game", () => {
         const byId = wrapper.find('#cell_00')
         expect(byId.text()).toBe('V')
     })
+
+    it("should move the pacman to the right", () => {
+        const wrapper = shallowMount(GameVue)
+        wrapper.vm.moveToRight()
+        const byId = wrapper.find('#cell_00')
+        expect(byId.text()).toBe(' ')
+        expect(wrapper.find("#cell_10").text()).toBe('V')
+    })
 })

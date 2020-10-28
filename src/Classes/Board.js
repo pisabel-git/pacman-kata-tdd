@@ -7,6 +7,12 @@ class Board {
     getTable(){
        return this.table 
     }
+
+    updateTable(formerPosition, newPosition){
+        this.table[newPosition[1]][newPosition[0]] = 'V'
+        this.table[formerPosition[1]][formerPosition[0]] = ' '
+        console.log(this.table)
+    }
 }
 
 export default Board

@@ -2,7 +2,7 @@
   <div>
     <div
       class="game"
-      v-for="(line, indexLine) in game.Board.getTable()"
+      v-for="(line, indexLine) in board"
       :key="indexLine"
       :id="indexLine"
     >
@@ -15,6 +15,7 @@
         {{ cell }}
       </div>
     </div>
+    <button v-on:click="moveToRight" id="buttonMoveToRight">Move to right</button>
   </div>
 </template>
 
@@ -26,9 +27,20 @@ export default {
   data() {
     return {
       game: new Game(),
+      board: [],
     };
   },
-  mounted() {},
+
+  methods: {
+    moveToRight(){
+      this.game.pacManMoveToRight()
+    }
+  },
+
+  mounted() {
+    this.board = this.game.Board.getTable() 
+  },
+
   components: {},
 };
 </script>
