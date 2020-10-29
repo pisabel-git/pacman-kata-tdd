@@ -15,7 +15,6 @@ describe("Board", () => {
         let count = 0
         table.forEach(line => count += line.filter(cell => cell === '.').length)
         expect(count).toEqual(8)
-        
     });
 
 })

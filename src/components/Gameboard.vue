@@ -5,17 +5,19 @@
 </template>
 
 <script>
-import Board from '@/Classes/Board'
 import GameVue from '@/components/GameVue'
 
 export default {
   name: 'Gameboard',
+  props: ['size'],
   data() {
       return{
-        board:  new Board()
+        table:  Array(this.size).fill().map(()=>Array(this.size).fill('•'))
       }
   },
-  mounted() {},
+  beforeMount() {
+    this.table[0][0] = 'V'
+  },
   components: {
     GameVue
   }
