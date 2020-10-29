@@ -1,9 +1,12 @@
 <template>
-<div class="Gameboard"></div>
+<div class="Gameboard">
+  <GameVue></GameVue>
+</div>
 </template>
 
 <script>
 import Board from '@/Classes/Board'
+import GameVue from '@/components/GameVue'
 
 export default {
   name: 'Gameboard',
@@ -13,7 +16,9 @@ export default {
       }
   },
   mounted() {},
-  components: {}
+  components: {
+    GameVue
+  }
 }
 </script>
 
